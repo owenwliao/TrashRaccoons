@@ -44,7 +44,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_FovKick.Setup(m_Camera);
             m_AudioSource = GetComponent<AudioSource>();
 
-            m_MouseLook.Init(transform, m_Camera.transform);
         }
 
         private void FixedUpdate()
