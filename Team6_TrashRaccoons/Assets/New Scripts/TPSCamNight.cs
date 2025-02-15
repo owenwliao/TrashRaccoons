@@ -61,17 +61,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             adjusted_height = height+target_dist * (height_scale/20);
             transform.position = target_average - adjusted_offset + Vector3.up * adjusted_height;
-
-            /*adjusted_target = target_average * -1;
-            Quaternion camAngle = Quaternion.LookRotation(adjusted_target, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, camAngle, 1);*/
-
-            //RotateView();
-        }
-
-        private void RotateView()
-        {
-            m_MouseLook.LookRotation(transform, m_Camera.transform);
         }
     }
 }
