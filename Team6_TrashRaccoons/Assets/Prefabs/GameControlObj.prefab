@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71b0228b414e4b08b721007169a7e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textGameObject: {fileID: 0}
+  paused: 0
 --- !u!1 &7126637875386415016
 GameObject:
   m_ObjectHideFlags: 0

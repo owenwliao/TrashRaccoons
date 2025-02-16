@@ -6,42 +6,34 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
-    public GameObject textGameObject;
-    private int score;
-    public bool paused = false;
+    public static bool paused;
 
     void Start () {
-        score = 0;
-        UpdateScore();
+        paused = false;
     }
 
     void Update () {     // always include a way to quit the game:
         if (Input.GetKey("escape")) {
-            Pause();
+            if (paused) {
+                Resume();
+            } else {
+                Pause();
+            }
         }
     }
 
-    public void AddScore (int newScoreValue) {
-        score += newScoreValue;
-        UpdateScore ();
-    }
-
-    void UpdateScore () {
-        Text scoreTextB = textGameObject.GetComponent<Text>();
-        scoreTextB.text = "Score: " + score;
-    }
-
     public void PlayAgain() {
-        SceneManager.LoadScene("GameScene"); // REPLACE WITH GAME SCENE
-        score = 0;
+        SceneManager.LoadScene("Testing"); // REPLACE WITH GAME SCENE
     }
 
     public void Pause() {
+        paused = true;
         SceneManager.LoadScene("pause_menu");
     }
 
     public void Resume() {
-        SceneManager.LoadScene("GameScene");
+        paused = false;
+        SceneManager.LoadScene("Testing"); // REPLACE WITH GAME SCENE
     }
 
     public void QuitGame() {
