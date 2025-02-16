@@ -21,6 +21,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private float m_StepInterval;
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private float m_RotSpeed;
+        [SerializeField] private bool isPlayer1;
+        [SerializeField] private float followSpeed;
 
         private bool m_Jump;
         private float m_YRotation;
@@ -32,7 +34,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_StepCycle;
         private float m_NextStep;
         private bool m_Jumping;
-
+        private float horizontal;
+        private float vertical;
+        private Vector3 facing;
+        
+        
         // Use this for initialization
         private void Start()
         {
@@ -82,10 +88,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = m_Input.x * speed; //desiredMove.x/.z * speed to move w/ camera
             m_MoveDir.z = m_Input.y * speed; //m_Input.x
 
-            //rotates the raccoons based on keyboard, not mouse
+            //rotates the raccoons based on key press, adjusted so non-cardinal directions are allowed (it snaps to them oddly otherwise)
+            facing = new Vector3(horizontal, 0f, vertical);
+            Vector3 newRot = Vector3.RotateTowards(transform.forward, facing, followSpeed * Time.deltaTime, 0f);
+
+            if (isPlayer1)
+            {
+                if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
+                {
+                    transform.rotation = Quaternion.LookRotation(newRot);
+                }
+            }else if(Input.GetKey("l") || Input.GetKey("p") || Input.GetKey("'") || Input.GetKey(";"))
+            {
+                transform.rotation = Quaternion.LookRotation(newRot);
+            }
 
 
-            if (m_CharacterController.isGrounded)
+                if (m_CharacterController.isGrounded)
             {
                 m_MoveDir.y = -m_StickToGroundForce;
 
@@ -126,16 +145,32 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void GetInput(out float speed)
         {
-            // Read input
-            float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-            float vertical = CrossPlatformInputManager.GetAxis("Vertical");
-
+            // Read inputs for player 1 and 2
+            if (isPlayer1)
+            {
+                horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+                vertical = CrossPlatformInputManager.GetAxis("Vertical");
+            }
+            else
+            {
+                horizontal = Input.GetAxis("Horizontal2");
+                vertical = Input.GetAxis("Vertical2");
+            }
+          
             bool waswalking = m_IsWalking;
 
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+            if (isPlayer1)
+            {
+                m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+            }
+            else
+            {
+                m_IsWalking = !Input.GetKey(KeyCode.RightShift);
+            }
+            
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
