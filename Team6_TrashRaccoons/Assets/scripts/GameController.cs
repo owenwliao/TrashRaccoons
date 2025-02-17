@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
 
     public static bool paused;
+    
 
     void Start () {
         paused = false;
