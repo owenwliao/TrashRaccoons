@@ -7,14 +7,16 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
 
     public static bool paused;
+    public GameObject pauseMenuUI;
     
 
     void Start () {
         paused = false;
+        pauseMenuUI.SetActive(false);
     }
 
     void Update () {     // always include a way to quit the game:
-        if (Input.GetKey("escape")) {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             if (paused) {
                 Resume();
             } else {
@@ -29,12 +31,14 @@ public class GameController : MonoBehaviour {
 
     public void Pause() {
         paused = true;
-        SceneManager.LoadScene("pause_menu");
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void Resume() {
         paused = false;
-        SceneManager.LoadScene("Testing"); // REPLACE WITH GAME SCENE
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void QuitGame() {
