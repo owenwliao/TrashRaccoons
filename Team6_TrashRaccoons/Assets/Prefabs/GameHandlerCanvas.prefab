@@ -32,7 +32,7 @@ Transform:
   - {fileID: 4550585131399378148}
   - {fileID: 6148587392731979244}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8828989234322368507
 GameObject:
@@ -176,10 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -272,31 +272,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7187620623253752610, guid: 9a5112ca5dc84420e9ee305ad401656a, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6272204621498456984, guid: 9a5112ca5dc84420e9ee305ad401656a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6354765517817521137}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a5112ca5dc84420e9ee305ad401656a, type: 3}
 --- !u!4 &4550585131399378148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2217674375677174749, guid: 9a5112ca5dc84420e9ee305ad401656a, type: 3}
   m_PrefabInstance: {fileID: 2441001615977781049}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8569073378814069921 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6272204621498456984, guid: 9a5112ca5dc84420e9ee305ad401656a, type: 3}
-  m_PrefabInstance: {fileID: 2441001615977781049}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6354765517817521137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8569073378814069921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1c78069a87554193813502cce7a0fba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
