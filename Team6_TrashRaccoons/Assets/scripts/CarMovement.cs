@@ -71,12 +71,13 @@ public class CarMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.CompareTag("Player"))
+        Debug.Log("Trigger detected with: " + other.name);
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Collision with player detected.");
-            Rigidbody playerRb = collision.collider.GetComponent<Rigidbody>();
+            Debug.Log("Trigger with player detected.");
+            Rigidbody playerRb = other.GetComponent<Rigidbody>();
             if (playerRb != null)
             {
                 Vector3 pushDirection = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
@@ -87,6 +88,10 @@ public class CarMovement : MonoBehaviour
                 // Restart the game
                 Debug.Log("Restarting the game...");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            else
+            {
+                Debug.LogError("Player Rigidbody is missing.");
             }
         }
     }
