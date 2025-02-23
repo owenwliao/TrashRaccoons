@@ -14,8 +14,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private MouseLook m_MouseLook;
         [SerializeField] private bool m_UseFovKick;
         [SerializeField] private FOVKick m_FovKick = new FOVKick();
-        [SerializeField] private Transform target1;
-        [SerializeField] private Transform target2;
         [SerializeField] private Vector3 offset;
         [SerializeField] private float offset_scale;
         [SerializeField] private float height;
@@ -36,6 +34,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Vector3 adjusted_offset;
         private float adjusted_height;
         private Vector3 adjusted_target;
+        private GameObject player1;
+        private GameObject player2;
+        private Transform target1;
+        private Transform target2;
 
         private void Start()
         {
@@ -43,7 +45,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
             m_FovKick.Setup(m_Camera);
             m_AudioSource = GetComponent<AudioSource>();
-
+            player1 = GameObject.FindWithTag("Player");
+            player2 = GameObject.FindWithTag("Player2");
+            target1 = player1.transform;
+            target2 = player2.transform;
         }
 
         private void FixedUpdate()

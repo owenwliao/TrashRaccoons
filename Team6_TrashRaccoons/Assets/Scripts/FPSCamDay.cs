@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -22,11 +23,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
         [SerializeField] private float m_StepInterval;
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
-        [SerializeField] private Transform target;
         [SerializeField] private Vector3 offset;
         [SerializeField] private float height;
-        [SerializeField] private CharacterController m_CharacterController;
-
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -40,6 +38,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
         public bool makeFootsteps;
+        private Quaternion yClamp = Quaternion.Euler(0f, 60f, 0f);
+        /*private float xRot;
+        private float yRot;
+        private float rotSpeed;*/
+        private Transform target;
+        private GameObject player;
+        private CharacterController m_CharacterController;
 
         // Use this for initialization
         private void Start()
@@ -53,6 +58,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
             m_MouseLook.Init(transform, m_Camera.transform);
+
+            player = GameObject.FindWithTag("Player");
+            target = player.transform;
+            m_CharacterController = player.GetComponent<CharacterController>();
         }
 
 
@@ -86,7 +95,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             GetInput(out speed);
 
             transform.position = target.position - offset + Vector3.up * height;
-           
+
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
 
@@ -189,7 +198,43 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
+           
+
             m_MouseLook.LookRotation(transform, m_Camera.transform);
+
+            /* idk how MouseLook works. Unity shows EulerAngles so this should work, but it doesn't.
+             
+             yRot = Input.GetAxis("Mouse Y") * rotSpeed;
+             xRot = Input.GetAxis("Mouse X") * rotSpeed;
+
+             yRot = Mathf.Clamp(yRot, -90f, 90f);
+             m_Camera.transform.rotation = Quaternion.Euler(xRot, yRot,0f); 
+            
+             Quaternion targetEuler = target.rotation;
+             Quaternion camEuler = m_Camera.transform.rotation;
+
+             if (camEuler.y > target.rotation.y + 60f)
+             {
+                 camEuler.y = target.rotation.y + 60f;
+             }
+             camEuler = Quaternion.Lerp(m_Camera.transform.rotation, camEuler, 0f);
+             Debug.Log(Input.GetAxis("Mouse X"));
+
+             /*Quaternion targetEuler = target.rotation;
+             Vector3 playerEulerAngles = transform.localEulerAngles;
+             Vector3 yRange = new Vector3(0f, 60f, 0f);
+             Quaternion yMin = Quaternion.Euler(-1*yRange) * targetEuler;
+             Quaternion yMax = Quaternion.Euler(yRange) * targetEuler;
+             float yMinEulerAngleY = yMin.eulerAngles.y;
+             float yMaxEulerAngleY = yMax.eulerAngles.y;
+             float camRotY =0;
+
+             yMinEulerAngleY = (yMinEulerAngleY > 180) ? yMinEulerAngleY - 360 : yMinEulerAngleY;
+             yMaxEulerAngleY = (yMaxEulerAngleY > 180) ? yMaxEulerAngleY - 360 : yMaxEulerAngleY;
+             playerEulerAngles.y = Mathf.Clamp(playerEulerAngles.y, yMaxEulerAngleY, yMinEulerAngleY);
+             transform.rotation = Quaternion.Euler(playerEulerAngles);
+             Debug.Log(yMaxEulerAngleY);
+             Debug.Log(yMinEulerAngleY);*/
         }
 
 
