@@ -9,7 +9,7 @@ public class CarMovement : MonoBehaviour
     public Transform midPoint; // Mid point
     public Transform endPoint; // End point
     public float speed = 5f; // Speed of the car
-    public float pushForceMultiplier = 10f; // Multiplier for the force to apply to the player
+    // public float pushForceMultiplier = 10f; // Multiplier for the force to apply to the player
 
     private int currentTargetIndex = 0;
     private Transform[] points;
@@ -77,22 +77,21 @@ public class CarMovement : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Trigger with player detected.");
-            Rigidbody playerRb = other.GetComponent<Rigidbody>();
-            if (playerRb != null)
-            {
-                Vector3 pushDirection = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
-                float pushForce = speed * pushForceMultiplier;
-                Debug.Log($"Applying force: {pushForce} in direction: {pushDirection}");
-                playerRb.AddForce(pushDirection * pushForce, ForceMode.Impulse);
-
-                // Restart the game
-                Debug.Log("Restarting the game...");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-            else
-            {
-                Debug.LogError("Player Rigidbody is missing.");
-            }
+            
+            // CharacterController playerController = other.GetComponent<CharacterController>();
+            // if (playerController != null)
+            // {
+            //     Vector3 pushDirection = other.transform.position - transform.position;
+            //     pushDirection.y = 0; // Keep the push direction horizontal
+            //     playerController.Move(pushDirection.normalized * pushForceMultiplier * Time.deltaTime);
+            // }
+            // else
+            // {
+            //     Debug.LogWarning("Player does not have a CharacterController component.");
+            // }
+            
+            Debug.Log("Restarting the game...");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

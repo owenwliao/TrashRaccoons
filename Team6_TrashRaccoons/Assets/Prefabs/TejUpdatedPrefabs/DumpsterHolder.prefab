@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6796297231268904659}
   - component: {fileID: 6643862890980349177}
   - component: {fileID: 523833178375598162}
+  - component: {fileID: 3483690059315660583}
   m_Layer: 0
   m_Name: Dumpster
   m_TagString: Dumpster
@@ -114,7 +115,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092873597497034278}
-  - component: {fileID: 988381590666226200}
   m_Layer: 0
   m_Name: DumpsterHolder
   m_TagString: Untagged
@@ -136,21 +136,8 @@ Transform:
   m_Children:
   - {fileID: 129871623180928945}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &988381590666226200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7141704125827239088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4607bf03ed8b4dd45a2f7ed1440f42cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrashBags: 0
 --- !u!1001 &1279371588347329378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,5 +198,21 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 965506153085210239, guid: 84874d3f4ad63c34ab7a34169ca86c66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3483690059315660583}
   m_SourcePrefab: {fileID: 100100000, guid: 84874d3f4ad63c34ab7a34169ca86c66, type: 3}
+--- !u!114 &3483690059315660583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873007603436731595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4607bf03ed8b4dd45a2f7ed1440f42cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrashBags: 0

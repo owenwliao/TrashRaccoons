@@ -58,15 +58,23 @@ public class TrashInteractor : MonoBehaviour
         RaycastHit hit2;
 
         // if raycast hits, it checks if it hit an object with the tag Dumpster
-        if(Physics.Raycast(transform.position, transform.forward, out hit2, 2) && hit2.collider.gameObject.CompareTag("Dumpster"))
+        if (Physics.Raycast(transform.position, transform.forward, out hit2, 2) && hit2.collider.gameObject.CompareTag("Dumpster"))
         {
-            DumpsterText.text =  "Dumpster : " + hit2.collider.gameObject.GetComponent<DumpsterScript>().TrashBags;
-
-            if(Input.GetMouseButton(0) && CurrentTrashBags > 0)
+            DumpsterScript dumpsterScript = hit2.collider.gameObject.GetComponent<DumpsterScript>();
+            if (dumpsterScript != null)
             {
-                hit2.collider.gameObject.GetComponent<DumpsterScript>().TrashBags += CurrentTrashBags;
-                CurrentTrashBags = 0;
-                ScoreText.text = "Trash Inventory: " + CurrentTrashBags;
+                DumpsterText.text = "Dumpster : " + dumpsterScript.TrashBags;
+
+                if (Input.GetMouseButton(0) && CurrentTrashBags > 0)
+                {
+                    dumpsterScript.TrashBags += CurrentTrashBags;
+                    CurrentTrashBags = 0;
+                    ScoreText.text = "Trash Inventory: " + CurrentTrashBags;
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Dumpster does not have a DumpsterScript component.");
             }
         }
         else
