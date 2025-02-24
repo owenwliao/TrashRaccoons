@@ -5,15 +5,15 @@ using TMPro;
 
 public class TrashInteractor : MonoBehaviour
 {
-    public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI DumpsterText;
+    public TextMeshProUGUI ScoreText;
     public int CurrentTrashBags = 0;
     private float initialY = 1.13f;
 
     // Start is called before the first frame update
     void Start()
     {
-        ScoreText.text = "Trash Inventory: " + CurrentTrashBags;        
+        ScoreText.text = "Trash Inventory: " + CurrentTrashBags;
     }
 
     //set mask to the mask of the object you
@@ -28,7 +28,6 @@ public class TrashInteractor : MonoBehaviour
             // if raycast hits, it checks if it hit an object with the tag Player
             if(Physics.Raycast(transform.position, transform.forward, out hit, 2) && hit.collider.gameObject.CompareTag("TrashCan"))
             {
-                Debug.Log("TrashCan");
                 hit.collider.gameObject.transform.position = new Vector3(hit.collider.gameObject.transform.position.x , initialY, hit.collider.gameObject.transform.position.z);
                 hit.collider.gameObject.transform.rotation = Quaternion.Euler(-90f, 0.0f, hit.collider.gameObject.transform.rotation.z);
             }
@@ -36,7 +35,6 @@ public class TrashInteractor : MonoBehaviour
 
         if(Input.GetMouseButton(0))
         {
-            Debug.Log("Mouse Clicked");
             RaycastHit hit;
 
             // if raycast hits, it checks if it hit an object with the tag Player
@@ -67,7 +65,6 @@ public class TrashInteractor : MonoBehaviour
             if(Input.GetMouseButton(0) && CurrentTrashBags > 0)
             {
                 hit2.collider.gameObject.GetComponent<DumpsterScript>().TrashBags += CurrentTrashBags;
-                Debug.Log("Dumpster");
                 CurrentTrashBags = 0;
                 ScoreText.text = "Trash Inventory: " + CurrentTrashBags;
             }

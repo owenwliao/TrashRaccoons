@@ -16,5 +16,17 @@ public class PlatformBroadcasterScript : MonoBehaviour
     void Update()
     {
        broadcastingTrash = transform.Find("Platform").GetComponent<TrashPlatformScript>().hasTrash;   
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("DayPatrol"))
+        {
+            if(!broadcastingTrash)
+            {
+                GameObject.Find("GameHandler").GetComponent<GameHandlerScript>().threatLevel++;
+            }
+        }
     }
 }
