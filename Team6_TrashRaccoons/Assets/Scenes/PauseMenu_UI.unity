@@ -592,10 +592,6 @@ PrefabInstance:
       propertyPath: pauseMenuUI
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 850119575393357661, guid: 66762e9eac2e54253a89ac3fd09fe4b7, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 922814235476446214, guid: 66762e9eac2e54253a89ac3fd09fe4b7, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -660,9 +656,28 @@ PrefabInstance:
       propertyPath: pauseMenuUI
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8484461967696996803, guid: 66762e9eac2e54253a89ac3fd09fe4b7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 910189255746559118}
+    - target: {fileID: 8484461967696996803, guid: 66762e9eac2e54253a89ac3fd09fe4b7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6354765517817521137, guid: 66762e9eac2e54253a89ac3fd09fe4b7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66762e9eac2e54253a89ac3fd09fe4b7, type: 3}
+--- !u!114 &910189255746559118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 145587883596793768, guid: 66762e9eac2e54253a89ac3fd09fe4b7, type: 3}
+  m_PrefabInstance: {fileID: 910189255746559117}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71b0228b414e4b08b721007169a7e6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

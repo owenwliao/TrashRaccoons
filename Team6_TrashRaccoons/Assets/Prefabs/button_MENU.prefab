@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 3782593492432753026}
   - component: {fileID: 4610206039043252706}
   m_Layer: 5
-  m_Name: button
+  m_Name: button_MENU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ RectTransform:
   m_Children:
   - {fileID: 716470999781742306}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

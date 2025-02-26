@@ -26,7 +26,15 @@ public class GameController : MonoBehaviour {
     }
 
     public void PlayAgain() {
-        SceneManager.LoadScene("Testing"); // REPLACE WITH GAME SCENE
+        SceneManager.LoadScene("Level1"); // REPLACE WITH GAME SCENE
+    }
+
+    public void Credits() {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void MainMenu() {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Pause() {
