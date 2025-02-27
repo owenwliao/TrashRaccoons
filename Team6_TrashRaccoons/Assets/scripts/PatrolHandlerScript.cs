@@ -24,7 +24,6 @@ public class PatrolHandlerScript : MonoBehaviour
 
         patrolMan.position = patrolPoints[0].position;
         currentPoint = 0;   
-        speed = 3.0f;
     }
 
     // Update is called once per frame
