@@ -76,21 +76,9 @@ public class CarMovement : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Trigger with player detected.");
-            
-            // CharacterController playerController = other.GetComponent<CharacterController>();
-            // if (playerController != null)
-            // {
-            //     Vector3 pushDirection = other.transform.position - transform.position;
-            //     pushDirection.y = 0; // Keep the push direction horizontal
-            //     playerController.Move(pushDirection.normalized * pushForceMultiplier * Time.deltaTime);
-            // }
-            // else
-            // {
-            //     Debug.LogWarning("Player does not have a CharacterController component.");
-            // }
-            
-            Debug.Log("Restarting the game...");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene("DeathScene");
         }
     }
 }
