@@ -9,7 +9,6 @@ public class CarMovement : MonoBehaviour
     public Transform midPoint; // Mid point
     public Transform endPoint; // End point
     public float speed = 5f; // Speed of the car
-    // public float pushForceMultiplier = 10f; // Multiplier for the force to apply to the player
 
     private int currentTargetIndex = 0;
     private Transform[] points;

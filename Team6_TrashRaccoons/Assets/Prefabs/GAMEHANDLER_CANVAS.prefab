@@ -1087,6 +1087,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5083789444592839570, guid: 4962046c1e22444a6ae80a30bd50f49c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3947541133274379633}
+    - target: {fileID: 5083789444592839570, guid: 4962046c1e22444a6ae80a30bd50f49c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 6285465860741741024, guid: 4962046c1e22444a6ae80a30bd50f49c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
