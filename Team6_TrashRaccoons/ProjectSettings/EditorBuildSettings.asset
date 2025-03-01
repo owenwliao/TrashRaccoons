@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
     guid: c88a0423b6dd2df438a89a7984c7df59
+  - enabled: 1
+    path: Assets/Scenes/TimeOutScene.unity
+    guid: 94b80e4188de81a4785de4591076e6ac
   m_configObjects: {}

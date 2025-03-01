@@ -23,6 +23,8 @@ public class DeathBox : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Trigger with player detected.");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             SceneManager.LoadScene("DeathScene");
         }
     }
