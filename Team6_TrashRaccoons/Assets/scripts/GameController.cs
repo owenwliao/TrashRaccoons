@@ -3,25 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameController : MonoBehaviour {
 
     public static bool paused;
     public GameObject pauseMenuUI;
-    
+    private Scene scene;
+
 
     void Start () {
         paused = false;
         pauseMenuUI.SetActive(false);
+        scene = SceneManager.GetActiveScene();
     }
 
-    void Update () {     // always include a way to quit the game:
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (paused) {
-                Resume();
-            } else {
-                Pause();
+    void Update() {     // always include a way to quit the game:
+        if (scene.name != "MainMenu" && scene.name != "Credits" && scene.name != "DeathScene")
+        {
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                if (paused) {
+                    Resume();
+                } else {
+                    Pause();
+                }
             }
+        }
+        if (scene.name == "MainMenu" || scene.name == "Credits" || scene.name == "DeathScene")
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
