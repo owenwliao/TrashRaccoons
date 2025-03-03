@@ -25,7 +25,7 @@ public class PlatformBroadcasterScript : MonoBehaviour
         {
             if(!broadcastingTrash)
             {
-                GameObject.Find("GameHandler").GetComponent<GameHandlerScript>().threatLevel++;
+                GameObject.Find("GameControlObj").GetComponent<GameHandlerScript>().threatLevel++;
             }
         }
     }

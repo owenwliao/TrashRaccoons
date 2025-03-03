@@ -26,6 +26,13 @@ public class GameHandlerScript : MonoBehaviour
     {
         ThreatLevelText.text = "Threat Level: " + threatLevel;
 
+        if (threatLevel >= 10)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene("GameOverScene");
+        }
+
         if (timer > 0)
         {
             timer -= Time.deltaTime;
