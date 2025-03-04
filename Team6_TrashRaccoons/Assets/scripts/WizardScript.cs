@@ -36,7 +36,7 @@ public class WizardScript : MonoBehaviour
                 WizardText.text = "Knock over trash cans to collect trash bags, you can hold up to 2 bags at a time! Left click to take a bag when you are looking at it. Right click to pick the can back up to put it back on its pedestal";
             }
             if(gameObject.name == "Dumpster Interactions"){
-                WizardText.text = "Left click to place bags in the dumpster, when you have 3, you can move onto the first level!";
+                WizardText.text = "Left click to place bags in the dumpster, when you put one in, you can move onto the first level!";
             }
         }
     }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameHandlerScript : MonoBehaviour
 {
-    public int threatLevel = 0;
+    public int threatLevel;
     public TextMeshProUGUI ThreatLevelText;
     public TextMeshProUGUI TimerText;
     public float timerDuration = 300f; // 5 minutes
@@ -16,6 +16,7 @@ public class GameHandlerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        threatLevel = 0;
         timer = timerDuration;
         ThreatLevelText.text = "Threat Level: " + threatLevel;
         UpdateTimerText();
