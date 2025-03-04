@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PatrolManScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -43,7 +39,7 @@ public class PatrolManScript : MonoBehaviour
     void DrawCircle()
     {
         //Draw a circle around the patroller to show how far they can see
-        float radius = 6.0f;
+        float radius = 7.0f;
         int numSegments = 100;
         LineRenderer line = gameObject.GetComponent<LineRenderer>();
         line.positionCount = numSegments + 1;
