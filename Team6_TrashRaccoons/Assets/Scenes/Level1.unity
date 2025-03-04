@@ -334,7 +334,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866ed2456d4117748a7b4ea65acf8937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 6
+--- !u!136 &23046072
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23046063}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &34568251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2908,6 +2930,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[8]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4022967413263317383, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
+      propertyPath: m_TagString
+      value: DayPatrol
+      objectReference: {fileID: 0}
     - target: {fileID: 4368389524095001405, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -2931,6 +2957,10 @@ PrefabInstance:
     - target: {fileID: 6200508017530607743, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200508017530607743, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7146660371639163218, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
       propertyPath: m_Enabled
@@ -3018,6 +3048,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2054075030}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4022967413263317383, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 889510645}
     - targetCorrespondingSourceObject: {fileID: 4022967413263317383, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 889510643}
@@ -5905,7 +5938,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 23538
+    surfaceParameter: 23544
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -9050194712669557566
@@ -5993,7 +6026,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866ed2456d4117748a7b4ea65acf8937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 4
 --- !u!120 &889510642
 LineRenderer:
   serializedVersion: 2
@@ -6119,6 +6151,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 5.473993, z: 1}
   m_Center: {x: 0, y: 2.2369974, z: 0}
+--- !u!136 &889510645
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889510639}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!4 &897740419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6197757899442486559, guid: 1e19a5a9567598640b120c189039f0bd, type: 3}
@@ -6582,7 +6637,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 23518
+    surfaceParameter: 23524
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 2114100572198394559
@@ -7313,7 +7368,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 23630
+    surfaceParameter: 23636
     meshQueryIndex: 7
     subMeshQueryIndex: 0
     geometryHashValue: 6650517630689063730
@@ -7590,7 +7645,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 23546
+    surfaceParameter: 23552
     meshQueryIndex: 3
     subMeshQueryIndex: 0
     geometryHashValue: 1329028114105994662
@@ -8104,7 +8159,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 23482
+    surfaceParameter: 23488
     meshQueryIndex: 2
     subMeshQueryIndex: 0
     geometryHashValue: -6167995929007231879
@@ -9069,7 +9124,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 23546
+    surfaceParameter: 23552
     meshQueryIndex: 3
     subMeshQueryIndex: 0
     geometryHashValue: 1329028114105994662
@@ -11359,6 +11414,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[8]
       value: 
       objectReference: {fileID: 2081793820}
+    - target: {fileID: 4022967413263317383, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
+      propertyPath: m_TagString
+      value: DayPatrol
+      objectReference: {fileID: 0}
     - target: {fileID: 4368389524095001405, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -11382,6 +11441,10 @@ PrefabInstance:
     - target: {fileID: 6200508017530607743, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200508017530607743, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7146660371639163218, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
       propertyPath: m_Enabled
@@ -11472,6 +11535,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2081793820}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4022967413263317383, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 23046072}
     - targetCorrespondingSourceObject: {fileID: 4022967413263317383, guid: 032b292c0d28d430ab7314465e57ac8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 23046068}

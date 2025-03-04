@@ -2221,6 +2221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DayPatrolHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 5992578124952228316, guid: 06f7a7e1c5ebf264e80600e1aa1b5f33, type: 3}
+      propertyPath: m_Radius
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6264980590697422547, guid: 06f7a7e1c5ebf264e80600e1aa1b5f33, type: 3}
       propertyPath: m_RootOrder
       value: 5
