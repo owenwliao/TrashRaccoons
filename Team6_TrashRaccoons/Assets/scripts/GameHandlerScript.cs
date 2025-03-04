@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameHandlerScript : MonoBehaviour
 {
-    public int threatLevel;
+    public int threatLevel = 0;
     public TextMeshProUGUI ThreatLevelText;
     public TextMeshProUGUI TimerText;
     public float timerDuration = 300f; // 5 minutes
